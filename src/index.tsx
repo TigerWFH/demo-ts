@@ -8,11 +8,12 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router'
 import 'es6-shim'
+import { Provider } from 'react-redux'
+import store from './store'
 // modules
 import { Module1 } from './module1'
 import { Module2 } from './module2'
 import { Module3 } from './module3'
-
 interface P { }
 interface S { }
 class App extends React.Component<P, S> {
@@ -27,14 +28,16 @@ class App extends React.Component<P, S> {
 
 
 let elem: JSX.Element = (
-    <Router history={hashHistory}>
-        <Route path="/" component={App}>
-            <IndexRoute component={Module1} />
-            <Route path="first" component={Module1}>
+    <Provider store={store}>
+        <Router history={hashHistory}>
+            <Route path="/" component={App}>
+                <IndexRoute component={Module1} />
+                <Route path="first" component={Module1}>
+                </Route>
+                <Route path="second" component={Module2}>
+                </Route>
             </Route>
-            <Route path="second" component={Module2}>
-            </Route>
-        </Route>
-    </Router>
+        </Router>
+    </Provider>
 )
 ReactDOM.render(elem, document.getElementById('main'));
