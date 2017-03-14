@@ -117,6 +117,8 @@ export class Module1 extends React.Component<P, S>{
     }
 
     _onClickButton = (self: any) => {
+        let { fetchData }: any = this.props;
+        fetchData();
         // TextInput
         console.log('home-->', this.refs.home.getInputText());
         this.refs.home.setInputText('set')
@@ -159,7 +161,7 @@ export class Module1 extends React.Component<P, S>{
                 <AppSidebar />
                 <AppContent>
                     <View>
-                        123123123
+                        {this.props.name || 123123123}
                         <Button onClick={this._onClickButton} />
                         <Button className="primary ghost"
                             iconLeft="fa fa-plus"
@@ -182,7 +184,7 @@ export class Module1 extends React.Component<P, S>{
                         <TextInput ref="home"
                             placeholder="123"
                             onChange={this._onChange}
-                            />
+                        />
                         <br />
                         <Select ref="select"
                             data={data} />

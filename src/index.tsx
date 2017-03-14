@@ -11,7 +11,7 @@ import 'es6-shim'
 import { Provider } from 'react-redux'
 import store from './store'
 // modules
-import { Module1 } from './module1'
+import Module1 from './module1/containers/index'
 import { Module2 } from './module2'
 import { Module3 } from './module3'
 interface P { }
