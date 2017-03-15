@@ -30,7 +30,9 @@ export class Nav extends React.Component<P, S>{
     }
     _renderAvartar = (isLogin: boolean) => {
         let elem = isLogin ?
-            <div onClick={this._onSignout}>
+            <div onClick={this._onSignout}
+                style={{ cursor: "pointer" }}
+                title="退出">
                 <img src={this.state.userAvartar} alt="null" />
                 <span>{this.state.userName}</span>
             </div> :
