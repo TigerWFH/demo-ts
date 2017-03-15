@@ -9,6 +9,7 @@ import { AppFooter } from '../components/appFooter';
 import { AppContent } from '../components/appContent';
 import { ViewPage } from '../components/basic/viewPage';
 import { Nav } from './components/nav';
+import { Logo } from './components/logo';
 // models
 
 interface P { }
@@ -22,7 +23,8 @@ export class Module2 extends React.Component<P, S>{
         return (
             <div>
                 <div>
-                    <AppHeader title={<Nav />} />
+                    <AppHeader title={<Nav />}
+                        logo={<Logo />} />
                     <AppContent>
                         <ViewPage>
                             <AppFooter />
