@@ -19,7 +19,7 @@ interface HeaderState {
 export class AppHeader extends React.Component<HeaderProps, HeaderState>{
     refs: any;
     static defaultProps = {
-        title: <Nav />
+        title: ""
     };
     constructor(props: HeaderProps) {
         super(props);
