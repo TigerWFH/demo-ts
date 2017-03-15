@@ -11,6 +11,7 @@ interface HeaderProps {
     className?: string;
     style?: { [name: string]: string | boolean | number };
     logoStyle?: { [name: string]: string | boolean | number };
+    logo?: string | React.ReactNode;
 }
 interface HeaderState {
     title?: string | React.ReactNode;
@@ -19,7 +20,8 @@ interface HeaderState {
 export class AppHeader extends React.Component<HeaderProps, HeaderState>{
     refs: any;
     static defaultProps = {
-        title: ""
+        title: "",
+        logo: <img src="./images/logo.jpg" alt="logo" />
     };
     constructor(props: HeaderProps) {
         super(props);
@@ -38,7 +40,7 @@ export class AppHeader extends React.Component<HeaderProps, HeaderState>{
             <div className={newClass} style={this.props.style}>
                 <div className="logoWrapper">
                     <div className="logo">
-                        <img style={this.props.logoStyle} src="" alt="logo" />
+                        {this.props.logo}
                     </div>
                 </div>
                 <div className="titleWrapper">
