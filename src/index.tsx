@@ -31,7 +31,7 @@ let elem: JSX.Element = (
     <Provider store={store}>
         <Router history={hashHistory}>
             <Route path="/" component={App}>
-                <IndexRoute component={Module1} />
+                <IndexRoute component={Module2} />
                 <Route path="first" component={Module1}>
                 </Route>
                 <Route path="second" component={Module2}>
