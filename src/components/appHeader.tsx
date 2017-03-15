@@ -3,6 +3,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 // components and utils
+import { Nav } from './nav';
 // models
 
 interface HeaderProps {
@@ -10,6 +11,7 @@ interface HeaderProps {
     className?: string;
     style?: { [name: string]: string | boolean | number };
     logoStyle?: { [name: string]: string | boolean | number };
+    logo?: string | React.ReactNode;
 }
 interface HeaderState {
     title?: string | React.ReactNode;
@@ -18,7 +20,8 @@ interface HeaderState {
 export class AppHeader extends React.Component<HeaderProps, HeaderState>{
     refs: any;
     static defaultProps = {
-        title: 'Monkey的家'
+        title: "",
+        logo: <img src="./images/logo.jpg" alt="logo" />
     };
     constructor(props: HeaderProps) {
         super(props);
@@ -35,17 +38,16 @@ export class AppHeader extends React.Component<HeaderProps, HeaderState>{
         let newClass = this.props.className ? 'appHeader' + this.props.className : 'appHeader';
         return (
             <div className={newClass} style={this.props.style}>
-                {/*logo */}
-                <div className="logo">
-                    <img style={this.props.logoStyle} src="" alt="logo" />
+                <div className="logoWrapper">
+                    <div className="logo">
+                        {this.props.logo}
+                    </div>
                 </div>
-                {/* title or menu */}
-                <div className="title">
-                    <span>
+                <div className="titleWrapper">
+                    <div className="title">
                         {this.state.title || this.props.title}
-                    </span>
+                    </div>
                 </div>
-                {/* info */}
             </div>
         )
     }

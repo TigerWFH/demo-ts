@@ -157,7 +157,7 @@ export class Module1 extends React.Component<P, S>{
     render() {
         return (
             <div style={{ width: '100%', height: '100%' }}>
-                <AppHeader />
+                <AppHeader title="Module1" />
                 <AppSidebar />
                 <AppContent>
                     <View>
