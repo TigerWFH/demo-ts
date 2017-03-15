@@ -43,9 +43,7 @@ export class AppHeader extends React.Component<HeaderProps, HeaderState>{
                 </div>
                 <div className="titleWrapper">
                     <div className="title">
-                        <span>
-                            {this.state.title || this.props.title}
-                        </span>
+                        {this.state.title || this.props.title}
                     </div>
                 </div>
             </div>

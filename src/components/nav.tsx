@@ -32,13 +32,13 @@ export class Nav extends React.Component<P, S>{
         let sStyle = this.state.isLogin ? null : { display: "none" };
         return (
             <nav className="wrapper">
+                <ul>
+                    {this.props.items}
+                </ul>
                 <span className="avartar" style={sStyle}>
                     <img src={this.state.userAvartar} alt="null" />
                     <span>{this.state.userName}</span>
                 </span>
-                <ul>
-                    {this.props.items}
-                </ul>
             </nav>
         )
     }

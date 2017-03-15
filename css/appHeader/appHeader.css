@@ -27,6 +27,7 @@
     .titleWrapper{
         flex-grow: 3;
         text-align: center;
+        min-width: 700px;
     .title {
         height: 72px;
         display: inline-block;

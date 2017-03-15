@@ -1,4 +1,5 @@
 nav.wrapper{
+    position: relative;
     ul{
         display: inline-block;
         vertical-align: middle;
@@ -15,7 +16,9 @@ nav.wrapper{
     span.avartar{
         display: inline-block;
         vertical-align: middle;
-        margin-right: 500px;
+        margin-right: 50px;
+        position: absolute;
+        right: 0;
         img{
             width: 30px;
             height: 30px;
