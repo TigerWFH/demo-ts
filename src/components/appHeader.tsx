@@ -3,6 +3,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 // components and utils
+import { Nav } from './nav';
 // models
 
 interface HeaderProps {
@@ -18,7 +19,7 @@ interface HeaderState {
 export class AppHeader extends React.Component<HeaderProps, HeaderState>{
     refs: any;
     static defaultProps = {
-        title: 'Monkey的家'
+        title: <Nav />
     };
     constructor(props: HeaderProps) {
         super(props);
