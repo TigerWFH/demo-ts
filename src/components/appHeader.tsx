@@ -36,17 +36,18 @@ export class AppHeader extends React.Component<HeaderProps, HeaderState>{
         let newClass = this.props.className ? 'appHeader' + this.props.className : 'appHeader';
         return (
             <div className={newClass} style={this.props.style}>
-                {/*logo */}
-                <div className="logo">
-                    <img style={this.props.logoStyle} src="" alt="logo" />
+                <div className="logoWrapper">
+                    <div className="logo">
+                        <img style={this.props.logoStyle} src="" alt="logo" />
+                    </div>
                 </div>
-                {/* title or menu */}
-                <div className="title">
-                    <span>
-                        {this.state.title || this.props.title}
-                    </span>
+                <div className="titleWrapper">
+                    <div className="title">
+                        <span>
+                            {this.state.title || this.props.title}
+                        </span>
+                    </div>
                 </div>
-                {/* info */}
             </div>
         )
     }
