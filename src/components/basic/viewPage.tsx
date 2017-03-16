@@ -16,11 +16,9 @@ export class ViewPage extends React.Component<ViewPageProps, ViewPageState> {
     }
     render() {
         return (
-            <div className="viewPage">
-                <article className="viewport">
-                    {this.props.children}
-                </article>
-            </div >
+            <article className="viewPage">
+                {this.props.children}
+            </article>
         )
     }
 }

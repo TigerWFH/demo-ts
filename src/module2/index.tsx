@@ -134,6 +134,8 @@ export class Module2 extends React.Component<P, S>{
                         我要居中<br />
                         我要居中<br />
                         我要居中<br />
+                        asdf
+                        asdfsaf
                     </div>
                     <AppFooter />
                 </ViewPage>
