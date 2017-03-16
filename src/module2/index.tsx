@@ -24,123 +24,119 @@ export class Module2 extends React.Component<P, S>{
         let node = document.createElement('div');
         node.className = 'modal';
         document.getElementsByTagName('body')[0].appendChild(node);
-    }    
+    }
     render() {
         return (
-            <div>
-                <div>
-                    <AppHeader title={<Nav />}
-                        logo={<Logo />} />
-                    <AppContent>
-                        <ViewPage>
-                            <button onClick={this._onTest}>
-                                123123
+            <div style={{ width: '100%', height: '100%' }}>
+                <AppHeader title={<Nav />}
+                    logo={<Logo />} />
+                <ViewPage>
+                    <button onClick={this._onTest}>
+                        123123
                             </button>
-                            <div style={{ margin: "auto auto", width: "1080px", border: "1px solid red", textAlign: "center" }}>
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                                我要居中<br />
-                            </div>
-                            <AppFooter />
-                        </ViewPage>
-                    </AppContent>
-                </div>
+                    <div style={{ margin: "auto auto", width: "1080px", border: "1px solid red", textAlign: "center" }}>
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                        我要居中<br />
+                    </div>
+                    <AppFooter />
+                </ViewPage>
             </div>
         )
     }
