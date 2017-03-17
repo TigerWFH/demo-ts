@@ -3,6 +3,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 interface ButtonProps {
+    style?: any;
     text?: string;
     title?: string;
     className?: string;
@@ -66,7 +67,7 @@ export class Button extends React.Component<ButtonProps, ButtonState>{
                     </span>;
         }
         return (
-            <div className='monkeyButtonWrapper'>
+            <div className='monkeyButtonWrapper' style={this.props.style}>
                 <button className={className + 'defaultButton'}
                     title={this.props.title}
                     onClick={this._onClick}>

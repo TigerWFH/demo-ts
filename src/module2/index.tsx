@@ -8,6 +8,7 @@ import { AppSidebar } from '../components/appSidebar';
 import { AppFooter } from '../components/appFooter';
 import { AppContent } from '../components/appContent';
 import { ViewPage } from '../components/basic/viewPage';
+import { Button } from '../components/basic/button';
 import { Nav } from './components/nav';
 import { Logo } from './components/logo';
 import { Modal } from '../components/modal';
@@ -16,14 +17,12 @@ import { Modal } from '../components/modal';
 interface P { }
 interface S { }
 export class Module2 extends React.Component<P, S>{
+    refs: any;
     constructor(prop: P) {
         super(prop)
     }
-
     _onTest = () => {
-        let node = document.createElement('div');
-        node.className = 'modal';
-        document.getElementsByTagName('body')[0].appendChild(node);
+        this.refs.modal.show();
     }
     render() {
         return (
@@ -31,9 +30,9 @@ export class Module2 extends React.Component<P, S>{
                 <AppHeader title={<Nav />}
                     logo={<Logo />} />
                 <ViewPage>
-                    <button onClick={this._onTest}>
-                        123123
-                            </button>
+                    <Button onClick={this._onTest}
+                        text="test">
+                    </Button>
                     <div style={{ margin: "auto auto", width: "1080px", border: "1px solid red", textAlign: "center" }}>
                         我要居中<br />
                         我要居中<br />
@@ -139,6 +138,7 @@ export class Module2 extends React.Component<P, S>{
                     </div>
                     <AppFooter />
                 </ViewPage>
+                <Modal ref="modal" />
             </div>
         )
     }

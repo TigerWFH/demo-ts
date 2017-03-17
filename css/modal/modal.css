@@ -1,11 +1,33 @@
-.modal{
+.mkMask{
+    display: flex;
     position: fixed;
-    border: 1px solid black;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    opacity: 0.2;
-    background: black;
+    background: rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    text-align: center;
+    align-items: center;
+    .mkModal{
+        margin: 0 auto;
+        width: 680px;
+        background: #fff;
+        border-radius: 4px;
+        .mkTitle{
+            padding: 10px;
+            font-size: 16px;
+            height: 40px;
+            box-shadow: 0 2px 2px #c4c4c4;
+        }
+        .mkContent{
+            padding: 20px 18px 20px 18px;
+            overflow: auto;
+        }
+        .mkFooter{
+            font-size: 16px;
+            height: 40px;
+            box-shadow: 0 -2px 2px #c4c4c4;
+        }
+    }
 }
