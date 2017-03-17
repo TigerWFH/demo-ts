@@ -3,6 +3,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Button } from '../../components/basic/button';
 import { Modal } from '../../components/modal';
+import { TextInput } from '../../components/basic/input';
 
 
 let items = [
@@ -16,7 +17,8 @@ interface P {
 interface S {
     userName?: any;
     userAvartar?: string;
-    isSignin?: boolean;
+    isSignon?: boolean;
+    isSignup?: boolean;
 }
 export class Nav extends React.Component<P, S>{
     refs: any;
@@ -28,8 +30,30 @@ export class Nav extends React.Component<P, S>{
         this.state = {
             userAvartar: './images/test.jpg',
             userName: "monkey",
-            isSignin: false
+            isSignon: false,
+            isSignup: false
         };
+    }
+    _renderForm = () => {
+        let fStyle = {
+            width: '300px',
+            padding: '20px 50px 50px 50px'
+        };
+        return (
+            <div style={fStyle}>
+                <TextInput ref="user"
+                    placeholder="请输入手机号/邮箱" />
+                <TextInput ref="pwd"
+                    type="password"
+                    placeholder="请输入密码" />
+                {
+                    this.state.isSignup ?
+                        <TextInput ref="pwd2"
+                            type="password"
+                            placeholder="请再次输入密码" /> : null
+                }
+            </div>
+        )
     }
     _renderAvartar = (isLogin: boolean) => {
         let bStyle = { display: "inline-block" };
@@ -53,24 +77,46 @@ export class Nav extends React.Component<P, S>{
         return elem;
     }
     _onSignon = () => {
-        // this.setState({
-        //     isSignin: true
-        // });
+        this.setState({
+            isSignup: false
+        });
         this.refs.signon.show();
     }
     _onSignup = () => {
-
+        this.setState({
+            isSignup: true
+        });
+        this.refs.signon.show();
     }
     _onSignout = () => {
         this.setState({
-            isSignin: false
+            isSignon: false
         });
     }
     _onOk = () => {
-        // post
+        let { isSignup } = this.state;
+        // 获取账户与密码
+        let user = this.refs.user.getInputText();
+        let pwd = this.refs.pwd.getInputText();
+        if (isSignup) {
+            let pwd2 = this.refs.pwd2.getInputText();
+            // post /v1/signup/
+            setTimeout(() => {
+                this.setState({
+                    isSignon: true
+                });
+                alert('注册成功!');
+                this.setState({
+                    isSignup: false
+                });
+                this.refs.signon.show();
+            }, 1000);
+            return;
+        }
+        // post /v1/signon/
         setTimeout(() => {
             this.setState({
-                isSignin: true
+                isSignon: true
             });
             alert('登录成功!');
         }, 1000);
@@ -82,11 +128,12 @@ export class Nav extends React.Component<P, S>{
                     {this.props.items}
                 </ul>
                 <span className="avartar">
-                    {this._renderAvartar(this.state.isSignin)}
+                    {this._renderAvartar(this.state.isSignon)}
                 </span>
                 <Modal title="注册登录"
                     ref="signon"
-                    onOk={this._onOk} />
+                    onOk={this._onOk}
+                    content={this._renderForm()} />
             </nav>
         )
     }

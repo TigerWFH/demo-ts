@@ -11,7 +11,7 @@
     align-items: center;
     .mkModal{
         margin: 0 auto;
-        width: 680px;
+        max-width: 680px;
         background: #fff;
         border-radius: 4px;
         .mkTitle{
@@ -21,7 +21,7 @@
             box-shadow: 0 2px 2px #c4c4c4;
         }
         .mkContent{
-            padding: 20px 18px 20px 18px;
+            padding: 20px 30px 20px 30px;
             overflow: auto;
         }
         .mkFooter{
