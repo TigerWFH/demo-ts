@@ -33,105 +33,12 @@ export class Module2 extends React.Component<P, S>{
                     <Button onClick={this._onTest}
                         text="test">
                     </Button>
-                    <div style={{ margin: "auto auto", width: "1080px", border: "1px solid red", textAlign: "center" }}>
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
-                        我要居中<br />
+                    <div style={{
+                        margin: "auto auto",
+                        width: "1080px",
+                        border: "1px solid red",
+                        textAlign: "center"
+                    }}>
                         我要居中<br />
                         asdf
                         asdfsaf
