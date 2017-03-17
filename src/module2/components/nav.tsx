@@ -98,8 +98,16 @@ export class Nav extends React.Component<P, S>{
         // 获取账户与密码
         let user = this.refs.user.getInputText();
         let pwd = this.refs.pwd.getInputText();
+        if (!user || !pwd) {
+            alert('账户/密码为空');
+            return;
+        }
         if (isSignup) {
             let pwd2 = this.refs.pwd2.getInputText();
+            if (!pwd2 || pwd !== pwd2) {
+                alert('密码为空或两次输入密码不一致');
+                return;
+            }
             // post /v1/signup/
             setTimeout(() => {
                 this.setState({
