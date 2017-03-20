@@ -4,6 +4,7 @@ let initialState = {
 };
 // 此处处理UI逻辑
 function handleActions(state = initialState, action: any = {}) {
+    console.log('action--->', action);
     switch (action.type) {
         case 'SIGN_ON':
             return Object.assign({}, state, { payload: action.payload });

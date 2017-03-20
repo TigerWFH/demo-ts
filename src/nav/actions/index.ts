@@ -16,15 +16,17 @@ export let signon = (params: any = {}) => {
         },
         data: params
     };
-    post(url, options).then(
-        (res: any) => {
-            action.payload = res.data;
-        },
-        (err: any) => {
-            action.payload = err;
-        }
-    );
-    return action;
+    return (dispatch: Function) =>
+        post(url, options).then(
+            (res: any) => {
+                action.payload = res.data;
+                dispatch(action);
+            },
+            (err: any) => {
+                action.payload = err;
+                dispatch(action);
+            }
+        );
 }
 // 注册
 export let signup = (params: any = {}) => {
