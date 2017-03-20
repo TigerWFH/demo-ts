@@ -1,12 +1,13 @@
 import { Nav } from '../nav';
 import { connect } from 'react-redux';
 
-function mapStateToProps() {
-    return {};
+function mapStateToProps(state: any) {
+    console.log('state--->', state);
+    return Object.assign({}, state);
 }
 
-function mapDispatchToProps() {
-    return {};
+function mapDispatchToProps(dispatch: any) {
+
 }
 
-export default connect(mapStateToProps, mapDispatchToProps, null, null)(Nav);
+export default connect(mapStateToProps)(Nav);

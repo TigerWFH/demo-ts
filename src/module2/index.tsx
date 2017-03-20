@@ -9,7 +9,7 @@ import { AppFooter } from '../components/appFooter';
 import { AppContent } from '../components/appContent';
 import { ViewPage } from '../components/basic/viewPage';
 import { Button } from '../components/basic/button';
-import { Nav } from '../nav/nav';
+import Nav from '../nav/containers';
 import { Logo } from '../nav/components/logo';
 import { Modal } from '../components/modal';
 // models

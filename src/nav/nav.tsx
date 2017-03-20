@@ -4,8 +4,7 @@ import * as ReactDOM from 'react-dom';
 import { Button } from '../components/basic/button';
 import { Modal } from '../components/modal';
 import { TextInput } from '../components/basic/input';
-import { get, post } from '../utils/http';
-
+import { signon } from './actions';
 
 let items = [
     <li><a href="#">联系我</a></li>,
@@ -14,6 +13,7 @@ let items = [
 ];
 interface P {
     items?: Array<React.ReactNode>;
+    dispatch?: Function;
 }
 interface S {
     userName?: any;
@@ -96,6 +96,7 @@ export class Nav extends React.Component<P, S>{
     }
     _onOk = () => {
         let { isSignup } = this.state;
+        let { dispatch } = this.props;
         // 获取账户与密码
         let user = this.refs.user.getInputText();
         let pwd = this.refs.pwd.getInputText();
@@ -123,12 +124,13 @@ export class Nav extends React.Component<P, S>{
             return;
         }
         // post /v1/signon/
-        setTimeout(() => {
-            this.setState({
-                isSignon: true
-            });
-            alert('登录成功!');
-        }, 1000);
+        // setTimeout(() => {
+        //     this.setState({
+        //         isSignon: true
+        //     });
+        //     alert('登录成功!');
+        // }, 1000);
+        dispatch(signon({ user: user, pwd: pwd }))
     }
     render() {
         return (
