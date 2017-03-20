@@ -7,7 +7,6 @@ export const SIGN_UP = 'SIGN_UP';
 export let signon = (params: any = {}) => {
     let action: any = {
         type: SIGN_ON,
-        status: 'begin',
         payload: {}
     };
     let url = '/v1/signon/';

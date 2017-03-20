@@ -1,24 +1,17 @@
 let initialState = {
-    isBegin: false,
-    isSuccess: false,
+    isSuccess: false
 };
 // 此处处理UI逻辑
 function handleActions(state = initialState, action: any = {}) {
     let ret: any = {};
     switch (action.type) {
         case 'SIGN_ON':
-            if (action.status === 'begin') {
-                ret = Object.assign({},
-                    state,
-                    { payload: action.payload, isBegin: true });
-            }
-            else if (action.status === 'success') {
+            if (action.status === 'success') {
                 ret = Object.assign({},
                     state,
                     {
                         payload: action.payload,
-                        isSuccess: true,
-                        isBegin: false
+                        isSuccess: true
                     });
             }
             else if (action.status === 'error') {
@@ -26,8 +19,7 @@ function handleActions(state = initialState, action: any = {}) {
                     state,
                     {
                         payload: action.payload,
-                        isSuccess: false,
-                        isBegin: false
+                        isSuccess: false
                     });
             }
             return ret;
