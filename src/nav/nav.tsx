@@ -83,7 +83,7 @@ export class Nav extends React.Component<P, S>{
         this.setState({
             isSignup: false
         });
-        this.refs.signon.show();
+        this.refs.signonUp.show();
     }
     _onSignup = () => {
         this.setState({
@@ -114,6 +114,7 @@ export class Nav extends React.Component<P, S>{
             signup({ username: user, password: pwd });
         }
         signon({ username: user, password: pwd });
+        this.refs.signonUp.hide();
     }
     render() {
         return (
@@ -125,7 +126,7 @@ export class Nav extends React.Component<P, S>{
                     {this._renderAvartar(this.state.isSignon)}
                 </span>
                 <Modal title="注册登录"
-                    ref="signon"
+                    ref="signonUp"
                     onOk={this._onOk}
                     content={this._renderForm()} />
             </nav>
