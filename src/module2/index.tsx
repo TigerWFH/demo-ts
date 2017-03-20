@@ -9,8 +9,8 @@ import { AppFooter } from '../components/appFooter';
 import { AppContent } from '../components/appContent';
 import { ViewPage } from '../components/basic/viewPage';
 import { Button } from '../components/basic/button';
-import { Nav } from './components/nav';
-import { Logo } from './components/logo';
+import { Nav } from '../nav/nav';
+import { Logo } from '../nav/components/logo';
 import { Modal } from '../components/modal';
 // models
 
@@ -40,8 +40,7 @@ export class Module2 extends React.Component<P, S>{
                         textAlign: "center"
                     }}>
                         我要居中<br />
-                        asdf
-                        asdfsaf
+                        asdfasdfsaf
                     </div>
                     <AppFooter />
                 </ViewPage>

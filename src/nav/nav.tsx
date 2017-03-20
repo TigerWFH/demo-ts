@@ -1,9 +1,10 @@
 // libs
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Button } from '../../components/basic/button';
-import { Modal } from '../../components/modal';
-import { TextInput } from '../../components/basic/input';
+import { Button } from '../components/basic/button';
+import { Modal } from '../components/modal';
+import { TextInput } from '../components/basic/input';
+import { get, post } from '../utils/http';
 
 
 let items = [

@@ -59,7 +59,6 @@ export class Modal extends React.Component<P, S>{
                 <Button text={cancelText}
                     onClick={this._onCancel}
                     style={bStyle}>
-
                 </Button>
             </div>
         )
@@ -69,7 +68,7 @@ export class Modal extends React.Component<P, S>{
         if (typeof onOk === "function") {
             onOk();
         }
-        this.hide();
+        // this.hide();
     }
     _onCancel = () => {
         let { onCancel } = this.props;
