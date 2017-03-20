@@ -12,7 +12,7 @@ export let signon = (params: any = {}) => {
     let url = '/v1/signon/';
     let options = {
         headers: {
-            'Content-Type': 'x-www-form-urlencoded'
+            'Content-Type': 'application/json'
         },
         data: params
     };
@@ -35,17 +35,17 @@ export let signup = (params: any = {}) => {
     let url = '/v1/signup/';
     let options = {
         headers: {
-            'Content-Type': 'x-www-form-urlencoded'
+            'Content-Type': 'application/json'
         },
         data: params
     };
-    // post(url, options).then(
-    //     (res: any) => {
-    //         action.payload = res.data;
-    //     },
-    //     (err: any) => {
-    //         action.payload = err;
-    //     }
-    // );
+    post(url, options).then(
+        (res: any) => {
+            action.payload = res.data;
+        },
+        (err: any) => {
+            action.payload = err;
+        }
+    );
     return action;
 }

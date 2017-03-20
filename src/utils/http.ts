@@ -4,7 +4,7 @@ function ajax(method: string, url: string, headers: any = null, data: any = null
     return new Promise((resolve, reject) => {
         let xhr = new XMLHttpRequest();
         xhr.open(method, url);
-        if (headers && isArrayFn(headers)) {
+        if (headers) {
             for (let key in headers) {
                 xhr.setRequestHeader(key, headers[key]);
             }
