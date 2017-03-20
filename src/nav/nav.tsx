@@ -111,9 +111,9 @@ export class Nav extends React.Component<P, S>{
                 alert('密码为空或两次输入密码不一致');
                 return;
             }
-            signup({ user: user, pwd: pwd });
+            signup({ username: user, password: pwd });
         }
-        signon({ user: user, pwd: pwd });
+        signon({ username: user, password: pwd });
     }
     render() {
         return (

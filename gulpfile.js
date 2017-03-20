@@ -108,9 +108,24 @@ gulp.task('resources', function () {
 })
 
 gulp.task('server', function () {
+    let proxy = require('express-http-proxy');
     let express = require('express');
     var app = express();
     app.use(express.static('./dev/dist'));
+    app.use('/', proxy('http://104.194.91.80:80', {
+        forwardPath: function (req, res) {
+            var path = require('url').parse(req.url).path;
+            console.log('--->path', path);
+            return path;
+        }
+    }));
+    app.use('/dev', proxy('localhost', {
+        forwardPath: function (req, res) {
+            var path = require('url').parse(req.url).path;
+            console.log('--->dev', path);
+            return path;
+        }
+    }));
     var server = app.listen(8989, function () {
         var host = server.address().address;
         var port = server.address().port;

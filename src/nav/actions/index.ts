@@ -9,19 +9,21 @@ export let signon = (params: any = {}) => {
         type: SIGN_ON,
         payload: 'signon'
     };
-    let url = '';
+    let url = '/v1/signon/';
     let options = {
-        headers: {},
+        headers: {
+            'Content-Type': 'x-www-form-urlencoded'
+        },
         data: params
     };
-    // post(url, options).then(
-    //     (res: any) => {
-    //         action.payload = res.data;
-    //     },
-    //     (err: any) => {
-    //         action.payload = err;
-    //     }
-    // );
+    post(url, options).then(
+        (res: any) => {
+            action.payload = res.data;
+        },
+        (err: any) => {
+            action.payload = err;
+        }
+    );
     return action;
 }
 // 注册
@@ -30,9 +32,11 @@ export let signup = (params: any = {}) => {
         type: SIGN_UP,
         payload: 'signup'
     };
-    let url = '';
+    let url = '/v1/signup/';
     let options = {
-        headers: {},
+        headers: {
+            'Content-Type': 'x-www-form-urlencoded'
+        },
         data: params
     };
     // post(url, options).then(
