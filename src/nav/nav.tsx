@@ -4,7 +4,7 @@ import * as ReactDOM from 'react-dom';
 import { Button } from '../components/basic/button';
 import { Modal } from '../components/modal';
 import { TextInput } from '../components/basic/input';
-import { signon } from './actions';
+import { signon, signup } from './actions';
 
 let items = [
     <li><a href="#">联系我</a></li>,
@@ -13,7 +13,8 @@ let items = [
 ];
 interface P {
     items?: Array<React.ReactNode>;
-    dispatch?: Function;
+    signon?: Function;
+    signup?: Function;
 }
 interface S {
     userName?: any;
@@ -24,8 +25,9 @@ interface S {
 export class Nav extends React.Component<P, S>{
     refs: any;
     static defaultProps = {
-        items: items
-    }
+        items: items,
+        test: ''
+    };
     constructor(props: P) {
         super(props);
         this.state = {
@@ -96,8 +98,7 @@ export class Nav extends React.Component<P, S>{
     }
     _onOk = () => {
         let { isSignup } = this.state;
-        let { dispatch } = this.props;
-        // 获取账户与密码
+        let { signon, signup } = this.props;
         let user = this.refs.user.getInputText();
         let pwd = this.refs.pwd.getInputText();
         if (!user || !pwd) {
@@ -110,27 +111,9 @@ export class Nav extends React.Component<P, S>{
                 alert('密码为空或两次输入密码不一致');
                 return;
             }
-            // post /v1/signup/
-            setTimeout(() => {
-                this.setState({
-                    isSignon: true
-                });
-                alert('注册成功!');
-                this.setState({
-                    isSignup: false
-                });
-                this.refs.signon.show();
-            }, 1000);
-            return;
+            signup({ user: user, pwd: pwd });
         }
-        // post /v1/signon/
-        // setTimeout(() => {
-        //     this.setState({
-        //         isSignon: true
-        //     });
-        //     alert('登录成功!');
-        // }, 1000);
-        dispatch(signon({ user: user, pwd: pwd }))
+        signon({ user: user, pwd: pwd });
     }
     render() {
         return (

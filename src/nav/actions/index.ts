@@ -7,6 +7,7 @@ export const SIGN_UP = 'SIGN_UP';
 export let signon = (params: any = {}) => {
     let action: any = {
         type: SIGN_ON,
+        payload: 'signon'
     };
     let url = '';
     let options = {
@@ -26,7 +27,8 @@ export let signon = (params: any = {}) => {
 // 注册
 export let signup = (params: any = {}) => {
     let action: any = {
-        type: SIGN_UP
+        type: SIGN_UP,
+        payload: 'signup'
     };
     let url = '';
     let options = {

@@ -27,7 +27,7 @@ export class Module2 extends React.Component<P, S>{
     render() {
         return (
             <div style={{ width: '100%', height: '100%' }}>
-                <AppHeader title={<Nav />}
+                <AppHeader title={<Nav test="123" />}
                     logo={<Logo />} />
                 <ViewPage>
                     <Button onClick={this._onTest}

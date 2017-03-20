@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import handleActions from './module1/reducers';
+import handleActions from './nav/reducers';
 // import { reducers } from './reducers';
 // let store = createStore(reducers);
 // store的api:subscribe(),dispatch(),getState()
