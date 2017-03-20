@@ -1,15 +1,47 @@
 let initialState = {
-    root: 'nav',
-    number: 123
+    isBegin: false,
+    isSuccess: false,
 };
 // 此处处理UI逻辑
 function handleActions(state = initialState, action: any = {}) {
-    console.log('action--->', action);
+    let ret: any = {};
     switch (action.type) {
         case 'SIGN_ON':
-            return Object.assign({}, state, { payload: action.payload });
+            if (action.status === 'begin') {
+                ret = Object.assign({},
+                    state,
+                    { payload: action.payload, isBegin: true });
+            }
+            else if (action.status === 'success') {
+                ret = Object.assign({},
+                    state,
+                    {
+                        payload: action.payload,
+                        isSuccess: true,
+                        isBegin: false
+                    });
+            }
+            else if (action.status === 'error') {
+                ret = Object.assign({},
+                    state,
+                    {
+                        payload: action.payload,
+                        isSuccess: false,
+                        isBegin: false
+                    });
+            }
+            return ret;
         case 'SIGN_UP':
-            return Object.assign({}, state, { payload: action.payload });
+            if (action.status === 'begin') {
+                ret = Object.assign({}, state, { payload: action.payload });
+            }
+            else if (action.status === 'success') {
+                ret = Object.assign({}, state, { payload: action.payload });
+            }
+            else if (action.status === 'error') {
+                ret = Object.assign({}, state, { payload: action.payload });
+            }
+            return ret;
         default:
             return state;
     }

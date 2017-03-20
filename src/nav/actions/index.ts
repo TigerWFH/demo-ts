@@ -7,7 +7,8 @@ export const SIGN_UP = 'SIGN_UP';
 export let signon = (params: any = {}) => {
     let action: any = {
         type: SIGN_ON,
-        payload: 'signon'
+        status: 'begin',
+        payload: {}
     };
     let url = '/v1/signon/';
     let options = {
@@ -20,10 +21,12 @@ export let signon = (params: any = {}) => {
         post(url, options).then(
             (res: any) => {
                 action.payload = res.data;
+                action.status = 'success';
                 dispatch(action);
             },
             (err: any) => {
                 action.payload = err;
+                action.status = 'error';
                 dispatch(action);
             }
         );
