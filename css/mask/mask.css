@@ -18,30 +18,9 @@
         width: 100px;
         height: 100px;
         border-radius: 100%;
-        transition: 2s;
-        animation: test 5s linear infinite;
+        animation: mkRotate 5s linear infinite;
         background: linear-gradient(90deg, red, orange, yellow, green,  blue, white);
     }
 }
 
 /*flash*/
-@keyframes test{
-    0% {
-        transform: rotate(0deg)
-    }
-    20%{
-        transform: rotate(72deg)
-    }
-    40%{
-        transform: rotate(144deg)
-    }
-    60%{
-        transform: rotate(216deg)
-    }
-    80%{
-        transform: rotate(288deg)
-    }
-    100%{
-        transform: rotate(360deg)
-    }
-}
