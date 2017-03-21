@@ -39,8 +39,9 @@ export class Module2 extends React.Component<P, S>{
                         border: "1px solid red",
                         textAlign: "center"
                     }}>
-                        我要居中<br />
-                        asdfasdfsaf
+                        欢迎来到我的主页，前端是使用react全家桶配上Typescript使用webpack编译完成的<br />
+                        后台这是使用nodejs实现的，目前仅仅实现了登录和注册接口，并在进一步优化中。<br />
+                        联系方式QQ:1083584640
                     </div>
                     <AppFooter />
                 </ViewPage>
