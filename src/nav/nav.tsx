@@ -89,7 +89,7 @@ export class Nav extends React.Component<P, S>{
         this.setState({
             isSignup: true
         });
-        this.refs.signon.show();
+        this.refs.signonUp.show();
     }
     _onSignout = () => {
         this.setState({
