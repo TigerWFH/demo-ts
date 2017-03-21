@@ -37,7 +37,8 @@ export class Module2 extends React.Component<P, S>{
                         margin: "auto auto",
                         width: "1080px",
                         border: "1px solid red",
-                        textAlign: "center"
+                        textAlign: "center",
+                        fontSize: "26px"
                     }}>
                         欢迎来到我的主页，前端是使用react全家桶配上Typescript使用webpack编译完成的<br />
                         后台这是使用nodejs实现的，目前仅仅实现了登录和注册接口，并在进一步优化中。<br />
