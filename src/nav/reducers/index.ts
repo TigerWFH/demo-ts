@@ -27,16 +27,25 @@ function handleActions(state = initialState, action: any = {}) {
             }
             return ret;
         case 'SIGN_UP':
-            if (action.status === 'success') {
-                ret = Object.assign({},
+            if (action.status === 'begin') {
+                ret = Object.assign(
+                    {},
                     state,
-                    { isSignup: true });
+                    { isSignup: true }
+                );
+            }
+            else if (action.status === 'success') {
+                ret = Object.assign(
+                    {},
+                    state,
+                    { isSignup: false }
+                );
             }
             else if (action.status === 'error') {
                 ret = Object.assign(
                     {},
                     state,
-                    {}
+                    { isSignup: false }
                 );
             }
             return ret;

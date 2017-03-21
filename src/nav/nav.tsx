@@ -123,7 +123,8 @@ export class Nav extends React.Component<P, S>{
                 alert('密码为空或两次输入密码不一致');
                 return;
             }
-            signup({ username: user, password: pwd });
+            this.refs.signonUp.hide();
+            return signup({ username: user, password: pwd });
         }
         signon({ username: user, password: pwd });
         this.refs.signonUp.hide();
@@ -141,6 +142,10 @@ export class Nav extends React.Component<P, S>{
                     ref="signonUp"
                     onOk={this._onOk}
                     content={this._renderForm()} />
+                <Modal title=""
+                    show={this.props.isSignup}
+                    ref="signuping"
+                    content="注册中" />
             </nav>
         )
     }

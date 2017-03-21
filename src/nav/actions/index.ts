@@ -35,6 +35,7 @@ export let signon = (params: any = {}) => {
 export let signup = (params: any = {}) => {
     let action: any = {
         type: SIGN_UP,
+        status: 'begin',
         payload: 'signup'
     };
     let url = '/v1/signup/';
@@ -45,6 +46,7 @@ export let signup = (params: any = {}) => {
         data: params
     };
     return (dispatch: Function) => {
+        dispatch(action);
         post(url, options).then(
             (res: any) => {
                 action.status = 'success';
