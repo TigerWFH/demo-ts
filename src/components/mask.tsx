@@ -18,7 +18,7 @@ interface S {
 }
 export class Mask extends React.Component<P, S>{
     static defaultProps = {
-        content: "Loading",
+        content: <div className="mkRound"></div>,
         rtStyle: {},
         ctStyle: {}
     };
