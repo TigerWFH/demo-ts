@@ -40,6 +40,11 @@ function handleActions(state = initialState, action: any = {}) {
                 );
             }
             return ret;
+        case 'SIGN_OUT':
+            ret = Object.assign({},
+                state,
+                { isSignon: action.payload.isSignon });
+            return ret;
         default:
             return state;
     }

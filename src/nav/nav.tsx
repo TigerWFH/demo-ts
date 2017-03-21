@@ -15,6 +15,7 @@ interface P {
     items?: Array<React.ReactNode>;//菜单项
     signon?: Function;//登录函数
     signup?: Function;//注册函数
+    signout?: Function;
     userName?: string;
     userAvartar?: string;
     isSignon?: boolean;//登录是否成功
@@ -104,9 +105,8 @@ export class Nav extends React.Component<P, S>{
         this.refs.signonUp.show();
     }
     _onSignout = () => {
-        this.setState({
-            isSignon: false
-        });
+        let { signout } = this.props;
+        signout();
     }
     _onOk = () => {
         let { isSignup } = this.state;

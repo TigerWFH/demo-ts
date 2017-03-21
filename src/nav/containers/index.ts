@@ -1,5 +1,5 @@
 import { Nav } from '../nav';
-import { signon, signup } from '../actions';
+import { signon, signup, signout } from '../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -10,7 +10,8 @@ function mapStateToProps(state: any, ownProps: any) {
 function mapDispatchToProps(dispatch: any, ownProps: any) {
     return {
         signon: (params: any) => { dispatch(signon(params)) },
-        signup: (params: any) => { dispatch(signup(params)) }
+        signup: (params: any) => { dispatch(signup(params)) },
+        signout: () => { dispatch(signout()) }
     }
 }
 

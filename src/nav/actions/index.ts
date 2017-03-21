@@ -3,6 +3,7 @@ import { getCachedToken } from '../../utils/usertoken';
 
 export const SIGN_ON = 'SIGN_ON';
 export const SIGN_UP = 'SIGN_UP';
+export const SIGN_OUT = 'SIGN_OUT';
 // 登录
 export let signon = (params: any = {}) => {
     let action: any = {
@@ -43,13 +44,30 @@ export let signup = (params: any = {}) => {
         },
         data: params
     };
-    post(url, options).then(
-        (res: any) => {
-            action.payload = res.data;
-        },
-        (err: any) => {
-            action.payload = err;
+    return (dispatch: Function) => {
+        post(url, options).then(
+            (res: any) => {
+                action.status = 'success';
+                action.payload = res.data
+                dispatch(action);
+            },
+            (err: any) => {
+                action.status = 'error';
+                action.payload = err;
+                dispatch(action);
+            }
+        );
+    }
+}
+
+// 退出
+export let signout = () => {
+    let action: any = {
+        type: SIGN_OUT,
+        payload: {
+            isSignon: false
         }
-    );
+    };
+
     return action;
 }
