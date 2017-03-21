@@ -24,10 +24,12 @@ export class Module2 extends React.Component<P, S>{
         super(prop)
     }
     _onTest = () => {
-        // Mask.mountMask({ show: true });
-        // setTimeout(() => {
-        //     Mask.unmountMask();
-        // }, 10000);
+        Mask.mountMask({ show: true });
+        setTimeout(() => {
+            Mask.unmountMask();
+        }, 5000);
+    }
+    _onTest1 = () => {
         Message.info('info');
     }
     render() {
@@ -36,8 +38,11 @@ export class Module2 extends React.Component<P, S>{
                 <AppHeader title={<Nav test="123" />}
                     logo={<Logo />} />
                 <ViewPage>
-                    <Button text="mask"
+                    <Button text="testMask"
                         onClick={this._onTest}>
+                    </Button>
+                    <Button text="testMessage"
+                        onClick={this._onTest1}>
                     </Button>
                     <div style={{
                         margin: "auto auto",
