@@ -41,6 +41,7 @@ export class Module2 extends React.Component<P, S>{
                     }}>
                         欢迎来到我的主页，前端是使用react全家桶配上Typescript使用webpack编译完成的<br />
                         后台这是使用nodejs实现的，目前仅仅实现了登录和注册接口，并在进一步优化中。<br />
+                        个人项目还在继续ing,欢迎你的指导<br />
                         联系方式QQ:1083584640
                     </div>
                     <AppFooter />
