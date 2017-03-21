@@ -12,6 +12,7 @@ import { Button } from '../components/basic/button';
 import Nav from '../nav/containers';
 import { Logo } from '../nav/components/logo';
 import { Modal } from '../components/modal';
+import { Mask } from '../components/mask';
 // models
 
 interface P { }
@@ -21,12 +22,21 @@ export class Module2 extends React.Component<P, S>{
     constructor(prop: P) {
         super(prop)
     }
+    _onTest = () => {
+        Mask.mountMask({ show: true });
+        setTimeout(() => {
+            Mask.unmountMask();
+        }, 10000);
+    }
     render() {
         return (
             <div style={{ width: '100%', height: '100%' }}>
                 <AppHeader title={<Nav test="123" />}
                     logo={<Logo />} />
                 <ViewPage>
+                    <Button text="mask"
+                        onClick={this._onTest}>
+                    </Button>
                     <div style={{
                         margin: "auto auto",
                         width: "1080px",
