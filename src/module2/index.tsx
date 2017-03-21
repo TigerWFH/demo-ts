@@ -21,9 +21,6 @@ export class Module2 extends React.Component<P, S>{
     constructor(prop: P) {
         super(prop)
     }
-    _onTest = () => {
-        this.refs.modal.show();
-    }
     render() {
         return (
             <div style={{ width: '100%', height: '100%' }}>
