@@ -1,5 +1,8 @@
 let initialState = {
-    isSuccess: false
+    isSignon: false,
+    isSignup: false,
+    userName: '',
+    userAvartar: ''
 };
 // 此处处理UI逻辑
 function handleActions(state = initialState, action: any = {}) {
@@ -10,28 +13,30 @@ function handleActions(state = initialState, action: any = {}) {
                 ret = Object.assign({},
                     state,
                     {
-                        payload: action.payload,
-                        isSuccess: true
+                        isSignon: true,
+                        token: action.payload.token//,
+                        //userName: action.payload.userName
                     });
             }
             else if (action.status === 'error') {
                 ret = Object.assign({},
                     state,
                     {
-                        payload: action.payload,
-                        isSuccess: false
                     });
             }
             return ret;
         case 'SIGN_UP':
-            if (action.status === 'begin') {
-                ret = Object.assign({}, state, { payload: action.payload });
-            }
-            else if (action.status === 'success') {
-                ret = Object.assign({}, state, { payload: action.payload });
+            if (action.status === 'success') {
+                ret = Object.assign({},
+                    state,
+                    { isSignup: true });
             }
             else if (action.status === 'error') {
-                ret = Object.assign({}, state, { payload: action.payload });
+                ret = Object.assign(
+                    {},
+                    state,
+                    {}
+                );
             }
             return ret;
         default:

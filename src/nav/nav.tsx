@@ -12,9 +12,14 @@ let items = [
     <li><a href="#">主页</a></li>
 ];
 interface P {
-    items?: Array<React.ReactNode>;
-    signon?: Function;
-    signup?: Function;
+    items?: Array<React.ReactNode>;//菜单项
+    signon?: Function;//登录函数
+    signup?: Function;//注册函数
+    userName?: string;
+    userAvartar?: string;
+    isSignon?: boolean;//登录是否成功
+    isSignup?: boolean;//注册是否成功
+    token?: string;
 }
 interface S {
     userName?: any;
@@ -26,15 +31,18 @@ export class Nav extends React.Component<P, S>{
     refs: any;
     static defaultProps = {
         items: items,
+        isSignon: false,
+        isSignup: false,
+        userAvartar: './images/test.jpg',
         test: ''
     };
     constructor(props: P) {
         super(props);
         this.state = {
-            userAvartar: './images/test.jpg',
-            userName: "monkey",
-            isSignon: false,
-            isSignup: false
+            userAvartar: this.props.userAvartar,
+            userName: this.props.userName,
+            isSignon: this.props.isSignon,
+            isSignup: this.props.isSignup
         };
     }
     _renderForm = () => {
@@ -83,12 +91,16 @@ export class Nav extends React.Component<P, S>{
         this.setState({
             isSignup: false
         });
+        this.refs.user.setInputText('');
+        this.refs.pwd.setInputText('');
         this.refs.signonUp.show();
     }
     _onSignup = () => {
         this.setState({
             isSignup: true
         });
+        this.refs.user.setInputText('');
+        this.refs.pwd.setInputText('');
         this.refs.signonUp.show();
     }
     _onSignout = () => {
