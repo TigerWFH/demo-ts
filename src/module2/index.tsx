@@ -30,9 +30,6 @@ export class Module2 extends React.Component<P, S>{
                 <AppHeader title={<Nav test="123" />}
                     logo={<Logo />} />
                 <ViewPage>
-                    <Button onClick={this._onTest}
-                        text="test">
-                    </Button>
                     <div style={{
                         margin: "auto auto",
                         width: "1080px",
