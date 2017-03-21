@@ -13,6 +13,7 @@ import Nav from '../nav/containers';
 import { Logo } from '../nav/components/logo';
 import { Modal } from '../components/modal';
 import { Mask } from '../components/mask';
+import { Message } from '../components/message';
 // models
 
 interface P { }
@@ -23,10 +24,11 @@ export class Module2 extends React.Component<P, S>{
         super(prop)
     }
     _onTest = () => {
-        Mask.mountMask({ show: true });
-        setTimeout(() => {
-            Mask.unmountMask();
-        }, 10000);
+        // Mask.mountMask({ show: true });
+        // setTimeout(() => {
+        //     Mask.unmountMask();
+        // }, 10000);
+        Message.info('info');
     }
     render() {
         return (

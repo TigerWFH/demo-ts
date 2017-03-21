@@ -1,0 +1,17 @@
+.mkMessage{
+    display: flex;
+    position: fixed;
+    top: 100px;
+    right: 200px;
+    width: 300px;
+    height: 80px;
+    text-align: center;
+    align-items: center;
+    border-radius: 4px;
+    background: mediumseagreen;
+    .mkContent{
+        margin: 0 auto;
+        text-align:center;
+        border: 1px solid red;
+    }
+}
