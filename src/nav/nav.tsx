@@ -72,8 +72,8 @@ export class Nav extends React.Component<P, S>{
             <div onClick={this._onSignout}
                 style={{ cursor: "pointer" }}
                 title="退出">
-                <img src={this.state.userAvartar} alt="null" />
-                <span className="userName">{this.state.userName}</span>
+                <img src={this.props.userAvartar} alt="null" />
+                <span className="userName">{this.props.userName}</span>
             </div> :
             <div>
                 <Button onClick={this._onSignon}
@@ -135,7 +135,7 @@ export class Nav extends React.Component<P, S>{
                     {this.props.items}
                 </ul>
                 <span className="avartar">
-                    {this._renderAvartar(this.state.isSignon)}
+                    {this._renderAvartar(this.props.isSignon)}
                 </span>
                 <Modal title="注册登录"
                     ref="signonUp"

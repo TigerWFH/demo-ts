@@ -14,8 +14,9 @@ function handleActions(state = initialState, action: any = {}) {
                     state,
                     {
                         isSignon: true,
-                        token: action.payload.token//,
-                        //userName: action.payload.userName
+                        token: action.payload.token,
+                        userName: action.payload.userName || 'default',
+                        userAvartar: action.payload.userAvartar || './images/test.jpg'
                     });
             }
             else if (action.status === 'error') {
