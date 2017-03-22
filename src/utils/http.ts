@@ -15,9 +15,7 @@ function ajax(method: string, url: string, headers: any = null, data: any = null
                     return resolve(xhr.responseText);
                 }
                 else {
-                    let error: any = new Error(xhr.statusText);
-                    error.response = xhr;
-                    return reject(error);
+                    return reject(xhr.responseText);
                 }
             }
         };
@@ -27,7 +25,7 @@ function ajax(method: string, url: string, headers: any = null, data: any = null
         xhr.send(data);
     });
 }
-
+//res={msgCode,msgText,[data]}
 function parseResult(res: any) {
     let o = {};
     try {
@@ -35,11 +33,18 @@ function parseResult(res: any) {
         return Promise.resolve(o);
     }
     catch (e) {
-        return Promise.reject(e);
+
     }
 }
 function catchError(err: any) {
-    return Promise.reject(err);
+    let o = {};
+    try {
+        o = JSON.parse(err);
+        return Promise.reject(o);
+    }
+    catch (e) {
+
+    }
 }
 function get(url: string, options: any = {}) {
     let headers = options.headers;

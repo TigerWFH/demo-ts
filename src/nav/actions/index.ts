@@ -50,12 +50,14 @@ export let signup = (params: any = {}) => {
         post(url, options).then(
             (res: any) => {
                 action.status = 'success';
-                action.payload = res.data
+                action.payload = res.data;
+                console.log('res--->', res);
                 dispatch(action);
             },
             (err: any) => {
                 action.status = 'error';
                 action.payload = err;
+                console.log('err--->', err);
                 dispatch(action);
             }
         );
