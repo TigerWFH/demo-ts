@@ -5,7 +5,7 @@ import { Button } from './basic/button';
 interface P {
     show?: boolean;
     title?: string | React.ReactNode;
-    content?: string | React.ReactNode;
+    content?: string | Function;
     hasFooter?: boolean;
     okText?: string;
     cancelText?: string;
@@ -81,11 +81,11 @@ export class Modal extends React.Component<P, S>{
         let mStyle = { display: this.state.show ? "flex" : "none" };
         let { title, content } = this.props;
         return (
-            <div className="mkMask" style={mStyle}>
+            <div className="mkModalWrapper" style={mStyle}>
                 <div className="mkModal">
                     {!!title && this._createTitle()}
                     <div className="mkContent">
-                        {content}
+                        {typeof content === 'function' ? content() : content}
                     </div>
                     {this._createFooter()}
                 </div>

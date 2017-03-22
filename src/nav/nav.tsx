@@ -33,12 +33,14 @@ interface S {
 }
 export class Nav extends React.Component<P, S>{
     refs: any;
+    user: string = '';
+    pwd: string = '';
+    pwd2: string = '';
     static defaultProps = {
         items: items,
         isSignon: false,
         isSignup: false,
-        userAvartar: './images/test.jpg',
-        test: ''
+        userAvartar: './images/test.jpg'
     };
     constructor(props: P) {
         super(props);
@@ -53,14 +55,14 @@ export class Nav extends React.Component<P, S>{
         };
         return (
             <div style={fStyle}>
-                <TextInput ref="user"
+                <TextInput onChange={this._onUser}
                     placeholder="请输入手机号/邮箱" />
-                <TextInput ref="pwd"
+                <TextInput onChange={this._onPwd}
                     type="password"
                     placeholder="请输入密码" />
                 {
                     !this.state.isSignonPage ?
-                        <TextInput ref="pwd2"
+                        <TextInput onChange={this._onPwd2}
                             type="password"
                             placeholder="请再次输入密码" /> : null
                 }
@@ -95,19 +97,12 @@ export class Nav extends React.Component<P, S>{
         this.setState({
             isSignonPage: true
         });
-        this.refs.user.setInputText('');
-        this.refs.pwd.setInputText('');
         this.refs.signonUp.show();
     }
     _onSignup = () => {
         this.setState({
             isSignonPage: false
         });
-        this.refs.user.setInputText('');
-        this.refs.pwd.setInputText('');
-        if (!this.state.isSignonPage) {
-            this.refs.pwd2 && this.refs.pwd2.setInputText('');
-        }
         this.refs.signonUp.show();
     }
     _onSignout = () => {
@@ -115,25 +110,36 @@ export class Nav extends React.Component<P, S>{
         signout();
         Message.success('退出成功');
     }
+    _onUser = (text: string, self: any) => {
+        this.user = text;
+    }
+    _onPwd = (text: string, self: any) => {
+        this.pwd = text;
+    }
+    _onPwd2 = (text: string, self: any) => {
+        this.pwd2 = text;
+    }
     _onOk = () => {
-        Mask.mountMask();
         let { isSignonPage } = this.state;
         let { signon, signup } = this.props;
-        let user = this.refs.user.getInputText();
-        let pwd = this.refs.pwd.getInputText();
+        let user = this.user;
+        let pwd = this.pwd;
         if (!user || !pwd) {
             Message.info('账户/密码为空');
             return;
         }
         if (!isSignonPage) {
-            let pwd2 = this.refs.pwd2.getInputText();
+            let pwd2 = this.pwd2;
             if (!pwd2 || pwd !== pwd2) {
                 Message.info('密码为空或两次输入密码不一致');
                 return;
             }
+            signup({ username: user, password: pwd });
+            Mask.mountMask();
             this.refs.signonUp.hide();
-            return signup({ username: user, password: pwd });
+            return;
         }
+        Mask.mountMask();
         signon({ username: user, password: pwd });
         this.refs.signonUp.hide();
     }
@@ -154,7 +160,7 @@ export class Nav extends React.Component<P, S>{
                 <Modal title="注册登录"
                     ref="signonUp"
                     onOk={this._onOk}
-                    content={this._renderForm()} />
+                    content={this._renderForm} />
             </nav>
         )
     }

@@ -51,13 +51,11 @@ export let signup = (params: any = {}) => {
             (res: any) => {
                 action.status = 'success';
                 action.payload = res.data;
-                console.log('res--->', res);
                 dispatch(action);
             },
             (err: any) => {
                 action.status = 'error';
                 action.payload = err;
-                console.log('err--->', err);
                 dispatch(action);
             }
         );
