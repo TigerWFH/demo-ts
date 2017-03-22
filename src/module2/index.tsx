@@ -69,11 +69,13 @@ export class Module2 extends React.Component<P, S>{
                         textAlign: "center",
                         fontSize: "26px"
                     }}>
-                        欢迎来到我的主页，前端是使用react全家桶配上Typescript使用webpack编译完成的<br />
+                        lalalala
+                        {/*欢迎来到我的主页，前端是使用react全家桶配上Typescript使用webpack编译完成的<br />
                         后台这是使用nodejs实现的，目前仅仅实现了登录和注册接口，并在进一步优化中。<br />
-                        个人项目还在继续ing,欢迎你的指导<br />
+                        个人项目还在继续ing,欢迎你的指导<br />*/}
                     </div>
-                    <AppFooter content="联系QQ:1083584640;QQ群:【js/nodejs】130077909" />
+                    {/*<AppFooter content="联系QQ:1083584640;QQ群:【js/nodejs】130077909" />*/}
+                    <AppFooter content="脚注" />
                 </ViewPage>
                 <Modal ref="modal" />
             </div>
