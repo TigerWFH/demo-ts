@@ -70,6 +70,9 @@ export class Nav extends React.Component<P, S>{
     }
     _renderAvartar = (isLogin: boolean) => {
         let bStyle = { display: "inline-block" };
+        if (isLogin) {
+            Message.success('登录成功');
+        }
         let elem = isLogin ?
             <div onClick={this._onSignout}
                 style={{ cursor: "pointer" }}
@@ -103,11 +106,15 @@ export class Nav extends React.Component<P, S>{
         });
         this.refs.user.setInputText('');
         this.refs.pwd.setInputText('');
+        if (this.state.isSignup) {
+            this.refs.pwd2.setInputText('');
+        }
         this.refs.signonUp.show();
     }
     _onSignout = () => {
         let { signout } = this.props;
         signout();
+        Message.success('退出成功');
     }
     _onOk = () => {
         let { isSignup } = this.state;
