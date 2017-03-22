@@ -17,8 +17,8 @@ interface P {
     signon?: Function;//登录函数
     signup?: Function;//注册函数
     signout?: Function;
-    userName?: string;
-    userAvartar?: string;
+    userName?: string;//后台数据
+    userAvartar?: string;//后台数据
     isSignon?: boolean;//登录是否成功
     isSignup?: boolean;//注册是否成功
     token?: string;

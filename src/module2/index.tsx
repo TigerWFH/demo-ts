@@ -73,7 +73,7 @@ export class Module2 extends React.Component<P, S>{
                         后台这是使用nodejs实现的，目前仅仅实现了登录和注册接口，并在进一步优化中。<br />
                         个人项目还在继续ing,欢迎你的指导<br />
                     </div>
-                    <AppFooter content="联系QQ:1083584640" />
+                    <AppFooter content="联系QQ:1083584640;QQ群:【js/nodejs】130077909" />
                 </ViewPage>
                 <Modal ref="modal" />
             </div>
