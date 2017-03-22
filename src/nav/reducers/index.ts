@@ -21,7 +21,7 @@ function handleActions(state = initialState, action: any = {}) {
                         // userName: action.payload.userName || 'default',
                         // userAvartar: action.payload.userAvartar || './images/test.jpg',
                         // isSignup: false,
-                        // error: ''
+                        error: ''
                     });
             }
             else if (action.status === 'success') {
@@ -57,7 +57,8 @@ function handleActions(state = initialState, action: any = {}) {
                     {},
                     state,
                     {
-                        isBeginAjax: true
+                        isBeginAjax: true,
+                        error: ''
                         // isSignup: true
                     }
                 );

@@ -3,8 +3,10 @@ import * as React from 'react';
 import * as REactDOM from 'react-dom';
 
 interface TextProps {
-    className?: string;
-    style?: {};
+    rtClassName?: string;//root class
+    rtStyle?: any;//root style
+    itClassName?: string;//input class
+    itStyle?: any;//input style
     type?: string;
     defaultValue?: string;
     value?: string;
@@ -20,7 +22,9 @@ export class TextInput extends React.Component<TextProps, TextState>{
     refs: any;
     // 初始化列表
     static defaultProps = {
-        type: 'text'
+        type: 'text',
+        rtStyle: {},
+        itStyle: {}
     };
     constructor(props: TextProps) {
         super(props);
@@ -47,17 +51,18 @@ export class TextInput extends React.Component<TextProps, TextState>{
         }
     }
     render() {
-        let className = this.props.className ?
-            this.props.className + ' ' : '';
+        let { rtStyle, rtClassName, itStyle, itClassName } = this.props;
+        let rtCN = rtClassName ? rtClassName + ' monkeyInputWrapper' : 'monkeyInputWrapper';
+        let itCN = itClassName ? rtClassName + ' defaultInput' : 'defaultInput';
         return (
-            <div className="monkeyInputWrapper">
+            <div className={rtCN} style={rtStyle}>
                 <input ref="input"
+                    className={itCN}
+                    style={itStyle}
                     defaultValue={this.props.defaultValue}
                     value={this.state.value}
                     placeholder={this.props.placeholder}
                     type={this.props.type}
-                    className={className + "defaultInput"}
-                    style={this.props.style}
                     maxLength={this.props.maxLength}
                     onChange={this._onChange} />
             </div>

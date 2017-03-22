@@ -133,19 +133,30 @@ export class Nav extends React.Component<P, S>{
             }
             signup({ username: user, password: pwd });
             Mask.mountMask();
-            this.refs.signonUp.hide();
+            // this.refs.signonUp.hide();
             return;
         }
         Mask.mountMask();
         signon({ username: user, password: pwd });
-        this.refs.signonUp.hide();
+        // this.refs.signonUp.hide();
     }
     componentWillReceiveProps(nextProps: any) {
         if (nextProps.isSignon) {
             Message.success('登录成功');
+            this.refs.signonUp.hide()
+        }
+        else if (!nextProps.isSignon && nextProps.error) {
+            Message.error(nextProps.error.msgText);
         }
         if (!nextProps.isBeginAjax) {
             Mask.unmountMask();
+        }
+        if (nextProps.isSignup) {
+            Message.success('注册成功');
+            this.refs.signonUp.hide()
+        }
+        else if (!nextProps.isSignup && nextProps.error) {
+            Message.error(nextProps.error.msgText);
         }
     }
     render() {
