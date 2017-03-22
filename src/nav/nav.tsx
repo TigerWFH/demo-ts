@@ -4,6 +4,7 @@ import * as ReactDOM from 'react-dom';
 import { Button } from '../components/basic/button';
 import { Modal } from '../components/modal';
 import { TextInput } from '../components/basic/input';
+import { Message } from '../components/message';
 import { signon, signup } from './actions';
 
 let items = [
@@ -114,13 +115,13 @@ export class Nav extends React.Component<P, S>{
         let user = this.refs.user.getInputText();
         let pwd = this.refs.pwd.getInputText();
         if (!user || !pwd) {
-            alert('账户/密码为空');
+            Message.info('账户/密码为空');
             return;
         }
         if (isSignup) {
             let pwd2 = this.refs.pwd2.getInputText();
             if (!pwd2 || pwd !== pwd2) {
-                alert('密码为空或两次输入密码不一致');
+                Message.info('密码为空或两次输入密码不一致');
                 return;
             }
             this.refs.signonUp.hide();
