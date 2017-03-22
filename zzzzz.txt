@@ -10,3 +10,8 @@ markdown基础语法:
 分割线: 3个以上的*,-,_
 连接: ['文字']
 
+问题:
+ReactDOM.render(){
+        ReactDOM.render()
+};
+ReactDOM.render()函数的嵌套会引起报错

@@ -71,9 +71,6 @@ export class Nav extends React.Component<P, S>{
     }
     _renderAvartar = (isSignon: boolean) => {
         let bStyle = { display: "inline-block" };
-        if (isSignon) {
-            Message.success('登录成功');
-        }
         let elem = isSignon ?
             <div onClick={this._onSignout}
                 style={{ cursor: "pointer" }}
@@ -144,6 +141,9 @@ export class Nav extends React.Component<P, S>{
         this.refs.signonUp.hide();
     }
     componentWillReceiveProps(nextProps: any) {
+        if (nextProps.isSignon) {
+            Message.success('登录成功');
+        }
         if (!nextProps.isBeginAjax) {
             Mask.unmountMask();
         }
