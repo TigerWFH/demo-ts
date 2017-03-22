@@ -5,13 +5,35 @@
     right: 200px;
     width: 300px;
     height: 80px;
+    color: #fff;
+    font-size: 14px;
     text-align: center;
     align-items: center;
     border-radius: 4px;
     background: mediumseagreen;
+    /*info-->rgba(0,163,254,0.8)*/
+    /*success-->rgba(0,178,119,0.8)*/
+    /*warning-->rgba(254,204,85,0.8)*/
+    /*err-->rgba(255,65,87,0.8)*/
     .mkContent{
         margin: 0 auto;
         text-align:center;
-        border: 1px solid red;
     }
+}
+
+.mkMessageInfo {
+    @include mkMessage;
+    background-color: rgba(0,163,254,0.8);
+}
+.mkMessageWarning {
+    @include mkMessage;
+    background-color: rgba(254,204,85,0.8);
+}
+.mkMessageSuccess {
+    @include mkMessage;
+    background-color: rgba(0,178,119,0.8);
+}
+.mkMessageError {
+    @include mkMessage;
+    background-color: rgba(255,65,87,0.8);
 }

@@ -30,7 +30,16 @@ export class Module2 extends React.Component<P, S>{
         }, 5000);
     }
     _onTest1 = () => {
+        Message.success('success');
+    }
+    _onTest2 = () => {
         Message.info('info');
+    }
+    _onTest3 = () => {
+        Message.warn('warning');
+    }
+    _onTest4 = () => {
+        Message.error('error');
     }
     render() {
         return (
@@ -41,8 +50,17 @@ export class Module2 extends React.Component<P, S>{
                     <Button text="testMask"
                         onClick={this._onTest}>
                     </Button>
-                    <Button text="testMessage"
+                    <Button text="MessageSuccess"
                         onClick={this._onTest1}>
+                    </Button>
+                    <Button text="MessageInfo"
+                        onClick={this._onTest2}>
+                    </Button>
+                    <Button text="MessageWarn"
+                        onClick={this._onTest3}>
+                    </Button>
+                    <Button text="MessageError"
+                        onClick={this._onTest4}>
                     </Button>
                     <div style={{
                         margin: "auto auto",

@@ -23,7 +23,17 @@ export class Message extends React.Component<P, S>{
     static info: Function = (msg: any) => {
         let options = {
             show: true,
-            content: msg
+            content: msg,
+            rtClassName: 'mkMessageInfo'
+        };
+        getInstance(options);
+        setTimeout(closeMessage, 1000);
+    }
+    static success: Function = (msg: any) => {
+        let options = {
+            show: true,
+            content: msg,
+            rtClassName: 'mkMessageSuccess'
         };
         getInstance(options);
         setTimeout(closeMessage, 1000);
@@ -31,7 +41,8 @@ export class Message extends React.Component<P, S>{
     static warn: Function = (msg: any) => {
         let options = {
             show: true,
-            content: msg
+            content: msg,
+            rtClassName: 'mkMessageWarning'
         };
         getInstance(options);
         setTimeout(closeMessage, 1000);
@@ -39,7 +50,8 @@ export class Message extends React.Component<P, S>{
     static error: Function = (msg: any) => {
         let options = {
             show: true,
-            content: msg
+            content: msg,
+            rtClassName: 'mkMessageError'
         };
         getInstance(options);
         setTimeout(closeMessage, 1000);
