@@ -77,7 +77,6 @@ export class Module2 extends React.Component<P, S>{
                     {/*<AppFooter content="联系QQ:1083584640;QQ群:【js/nodejs】130077909" />*/}
                     <AppFooter content="脚注" />
                 </ViewPage>
-                <Modal ref="modal" />
             </div>
         )
     }
