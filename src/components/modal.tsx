@@ -3,6 +3,16 @@ import * as ReactDOM from 'react-dom';
 import { Button } from './basic/button';
 
 interface P {
+    rtClassName?: string;//root class
+    rtStyle?: any;//root style
+    mlClassName?: string;
+    mlStyle?: any;
+    hrClassName?: string;
+    htStyle?: any;
+    ctClassName?: string;//content class
+    ctStyle?: any;//content style
+    frClassName?: string;
+    frStyle?: any;
     show?: boolean;
     title?: string | React.ReactNode;
     content?: string | Function;
@@ -18,6 +28,11 @@ interface S {
 
 export class Modal extends React.Component<P, S>{
     static defaultProps = {
+        rtStyle: {},
+        mlStyle: {},
+        hrStyle: {},
+        ctStyle: {},
+        frStyle: {},
         show: false,
         content: '',
         okText: '确定',
@@ -78,13 +93,21 @@ export class Modal extends React.Component<P, S>{
         this.hide();
     }
     render() {
-        let mStyle = { display: this.state.show ? "flex" : "none" };
+        let rtStyle = Object.assign({},
+            this.props.rtStyle,
+            { display: this.state.show ? "flex" : "none" });
+        let rtCN = this.props.rtClassName ?
+            this.props.rtClassName + ' mkModalWrapper' : 'mkModalWrapper';
+        let mlCN = this.props.mlClassName ?
+            this.props.mlClassName + ' mkModal' : 'mkModal';
+        let ctCN = this.props.ctClassName ?
+            this.props.ctClassName + ' mkContent' : 'mkContent';
         let { title, content } = this.props;
         return (
-            <div className="mkModalWrapper" style={mStyle}>
-                <div className="mkModal">
+            <div className={rtCN} style={rtStyle}>
+                <div className={mlCN} style={this.props.mlStyle}>
                     {!!title && this._createTitle()}
-                    <div className="mkContent">
+                    <div className={ctCN} style={this.props.ctStyle}>
                         {typeof content === 'function' ? content() : content}
                     </div>
                     {this._createFooter()}
