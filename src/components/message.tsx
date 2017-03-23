@@ -90,6 +90,7 @@ function getInstance(options: any = {}) {
             document.body.appendChild(container);
         }
         instance = ReactDOM.render(<Message {...options} />, container);
+        // 考虑下unstable_renderSubtreeIntoContainer用处
     }
 
     return instance;
