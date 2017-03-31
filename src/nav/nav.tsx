@@ -6,6 +6,8 @@ import { Modal } from '../components/modal';
 import { TextInput } from '../components/basic/input';
 import { Message } from '../components/message';
 import { Mask } from '../components/mask';
+import { SignUp } from './components/signup';
+import { SignOn } from './components/signon';
 import { signon, signup } from './actions';
 
 let items = [
@@ -94,13 +96,15 @@ export class Nav extends React.Component<P, S>{
         this.setState({
             isSignonPage: true
         });
-        this.refs.signonUp.show();
+        this.refs.signon.show();
+        // this.refs.signonUp.show();
     }
     _onSignup = () => {
         this.setState({
             isSignonPage: false
         });
-        this.refs.signonUp.show();
+        this.refs.signup.show();
+        // this.refs.signonUp.show();
     }
     _onSignout = () => {
         let { signout } = this.props;
@@ -168,6 +172,12 @@ export class Nav extends React.Component<P, S>{
                 <span className="avartar">
                     {this._renderAvartar(this.props.isSignon)}
                 </span>
+                <SignUp ref="signup"
+                    rtClassName="rt"
+                    rtStyle="rtstyle"
+                    mlClassName="mlCN"
+                    mlStyle="mlStyle" />
+                <SignOn ref="signon" />
                 <Modal title="注册登录"
                     ref="signonUp"
                     onOk={this._onOk}

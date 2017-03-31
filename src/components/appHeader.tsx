@@ -3,7 +3,6 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 // components and utils
-import { Nav } from './nav';
 // models
 
 interface HeaderProps {

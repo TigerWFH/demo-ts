@@ -44,8 +44,7 @@ export class Module2 extends React.Component<P, S>{
     render() {
         return (
             <div style={{ width: '100%', height: '100%' }}>
-                <AppHeader title={<Nav test="123" />}
-                    logo={<Logo />} />
+                <AppHeader title={<Nav />} />
                 <ViewPage>
                     <Button text="testMask"
                         onClick={this._onTest}>
